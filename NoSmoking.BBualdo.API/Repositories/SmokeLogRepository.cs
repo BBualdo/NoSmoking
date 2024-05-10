@@ -1,31 +1,44 @@
-﻿using NoSmoking.BBualdo.API.Models;
+﻿using Microsoft.EntityFrameworkCore;
+using NoSmoking.BBualdo.API.Data;
+using NoSmoking.BBualdo.API.Models;
 
 namespace NoSmoking.BBualdo.API.Repositories;
 
 public class SmokeLogRepository : ISmokeLogRepository
 {
-  public Task AddSmokeLog(SmokeLogDTO smokeLog)
+  private readonly SmokeLogsContext _context;
+
+  public SmokeLogRepository(SmokeLogsContext context)
   {
-    throw new NotImplementedException();
+    _context = context;
   }
 
-  public Task DeleteSmokeLog(int id)
+  public async Task AddSmokeLog(SmokeLog smokeLog)
   {
-    throw new NotImplementedException();
+    await _context.Records.AddAsync(smokeLog);
+    await _context.SaveChangesAsync();
   }
 
-  public Task<SmokeLog?> GetSmokeLog(int id)
+  public async Task DeleteSmokeLog(int id)
   {
-    throw new NotImplementedException();
+    SmokeLog logToDelete = await _context.Records.SingleAsync(x => x.Id == id);
+    _context.Records.Remove(logToDelete);
+    await _context.SaveChangesAsync();
   }
 
-  public Task<IEnumerable<SmokeLog>> GetSmokeLogs()
+  public async Task<SmokeLog?> GetSmokeLog(int id)
   {
-    throw new NotImplementedException();
+    return await _context.Records.FindAsync(id);
   }
 
-  public Task UpdateSmokeLog(int id, SmokeLogDTO smokeLog)
+  public async Task<IEnumerable<SmokeLog>> GetSmokeLogs()
   {
-    throw new NotImplementedException();
+    return await _context.Records.ToListAsync();
+  }
+
+  public async Task UpdateSmokeLog(SmokeLog smokeLog)
+  {
+    _context.Entry(smokeLog).State = EntityState.Modified;
+    await _context.SaveChangesAsync();
   }
 }

@@ -6,7 +6,7 @@ public interface ISmokeLogRepository
 {
   Task<IEnumerable<SmokeLog>> GetSmokeLogs();
   Task<SmokeLog?> GetSmokeLog(int id);
-  Task AddSmokeLog(SmokeLogDTO smokeLog);
-  Task UpdateSmokeLog(int id, SmokeLogDTO smokeLog);
+  Task AddSmokeLog(SmokeLog smokeLog);
+  Task UpdateSmokeLog(SmokeLog smokeLog);
   Task DeleteSmokeLog(int id);
 }
