@@ -19,10 +19,13 @@ body {
 
 main {
   height: 100%;
+  padding: 40px;
 }
 
 .primary__btn {
   align-items: center;
+  background-color: black;
+  border: none;
   border-radius: 50px;
   box-shadow: 0 4px 0 var(--bloodRed);
   cursor: pointer;
@@ -32,6 +35,7 @@ main {
   height: 60px;
   padding: 0 24px;
   position: relative;
+  text-decoration: none;
   text-transform: uppercase;
 }
 
@@ -42,4 +46,20 @@ main {
 .primary__btn:active {
   box-shadow: none;
   top: 4px;
+}
+
+.back__btn {
+  background-color: black;
+  border: 4px solid var(--bloodRed);
+  border-radius: 50px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: bold;
+  padding: 6px 24px;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.back__btn:hover {
+  background-color: var(--bloodRedHover);
 }

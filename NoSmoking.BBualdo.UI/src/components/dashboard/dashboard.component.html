@@ -1,1 +1,41 @@
-<p>dashboard works!</p>
+<div class="dashboard__container">
+  <a class="back__btn" routerLink="..">&lt; Back</a>
+  <div class="smoke-logs__container">
+    <h1>Smoking History</h1>
+    <div class="smoke-logs__box">
+      <div class="smoke-logs__panel">
+        <input
+          type="text"
+          placeholder="Search Date"
+          onfocus="
+          this.type='date'; 
+          this.showPicker();"
+          onblur="this.type='text'"
+        />
+      </div>
+
+      <div class="smoke-logs">
+        <div class="smoke-logs__header">
+          <p>#</p>
+          <p>Date</p>
+          <p>Cigarettes</p>
+        </div>
+        @if (logs$ | async; as logs) {
+          @if (logs.length > 0) {
+            @for (log of logs; track $index) {
+              <div class="smoke-log">
+                <p>{{ $index + 1 }}</p>
+                <p>{{ formatDate(log.date, "dd.MM.yyyy HH:mm", "en-US") }}</p>
+                <p>{{ log.quantity }}</p>
+              </div>
+            }
+          } @else {
+            <p>No logs</p>
+          }
+        } @else {
+          <p>No connection.</p>
+        }
+      </div>
+    </div>
+  </div>
+</div>

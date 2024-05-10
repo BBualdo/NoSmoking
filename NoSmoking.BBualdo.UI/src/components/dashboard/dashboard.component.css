@@ -1,0 +1,62 @@
+.dashboard__container {
+  height: 100%;
+}
+
+.smoke-logs__container {
+  margin-top: 40px;
+}
+
+.smoke-logs__box {
+  border: 2px solid var(--bloodRed);
+  margin-top: 20px;
+}
+
+.smoke-logs__panel {
+  background-color: var(--bloodRedHover);
+  padding: 20px;
+}
+
+input {
+  background-color: black;
+  border: 4px solid var(--bloodRed);
+  border-radius: 50px;
+  color: white;
+  cursor: pointer;
+  font-weight: bold;
+  letter-spacing: 2px;
+  outline: none;
+  padding: 12px;
+  text-align: center;
+  width: 200px;
+}
+
+input:hover {
+  background-color: var(--bloodRedHover);
+}
+
+input::placeholder {
+  color: white;
+}
+
+.smoke-logs {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px;
+}
+
+.smoke-logs__header {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  font-size: 1.25rem;
+  font-weight: bold;
+  border-bottom: 2px solid var(--bloodRed);
+  padding-bottom: 20px;
+}
+
+.smoke-log {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  font-size: 1.25rem;
+  font-weight: bold;
+}
