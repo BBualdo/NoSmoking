@@ -21,9 +21,7 @@ export class AddModalComponent {
   @Output() closeEvent = new EventEmitter<boolean>();
 
   addFormGroup = new FormGroup({
-    date: new FormControl<string>(
-      formatDate(new Date(), 'dd-MM-yyyy HH:mm', 'en-US'),
-    ),
+    date: new FormControl<string | null>(null),
     quantity: new FormControl<number>(1),
   });
 

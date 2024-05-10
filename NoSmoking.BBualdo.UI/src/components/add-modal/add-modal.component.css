@@ -29,7 +29,8 @@
 .modal__header > button {
   align-items: center;
   background-color: transparent;
-  border: 4px ridge var(--bloodRed);
+  border: none;
+  border-bottom: 4px ridge var(--bloodRed);
   cursor: pointer;
   display: flex;
   fill: white;

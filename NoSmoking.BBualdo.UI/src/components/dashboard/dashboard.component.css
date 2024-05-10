@@ -14,6 +14,7 @@
 .smoke-logs__panel {
   background-color: var(--bloodRedHover);
   display: flex;
+  height: 86px;
   justify-content: space-between;
   padding: 20px;
 }
