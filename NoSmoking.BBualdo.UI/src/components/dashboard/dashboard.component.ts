@@ -34,6 +34,7 @@ export class DashboardComponent {
 
   closeModal() {
     this.isOpen = false;
+    this.getSmokeLogs();
   }
 
   formatDate(dateStr: string, format: string, locale: string): string {

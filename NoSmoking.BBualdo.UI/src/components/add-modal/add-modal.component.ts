@@ -49,6 +49,7 @@ export class AddModalComponent {
     this.smokeService.addLog(log).subscribe({
       next: () => {
         this.addFormGroup.reset();
+        this.closeModal();
       },
     });
   }
