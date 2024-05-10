@@ -1,5 +1,5 @@
 export interface SmokeLog {
-  id: number;
+  id?: number;
   date: string;
   quantity: number;
 }

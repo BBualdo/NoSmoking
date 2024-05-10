@@ -1,3 +1,5 @@
+<app-add-modal [isOpen]="isOpen" (closeEvent)="closeModal()"></app-add-modal>
+
 <div class="dashboard__container">
   <a class="back__btn" routerLink="..">&lt; Back</a>
   <div class="smoke-logs__container">
@@ -12,6 +14,7 @@
           this.showPicker();"
           onblur="this.type='text'"
         />
+        <button class="secondary__btn" (click)="openModal()">Add Log +</button>
       </div>
 
       <div class="smoke-logs">
