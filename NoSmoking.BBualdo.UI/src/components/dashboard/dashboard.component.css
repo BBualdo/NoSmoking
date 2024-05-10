@@ -50,7 +50,7 @@ input::placeholder {
 
 .smoke-logs__header {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr)) 80px;
   font-size: 1.25rem;
   font-weight: bold;
   border-bottom: 2px solid var(--bloodRed);
@@ -59,7 +59,28 @@ input::placeholder {
 
 .smoke-log {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr)) 80px;
   font-size: 1.25rem;
   font-weight: bold;
+}
+
+.action-buttons {
+  align-items: center;
+  display: flex;
+  gap: 10px;
+}
+
+.edit__btn,
+.delete__btn {
+  background-color: black;
+  cursor: pointer;
+  padding: 4px;
+}
+
+.edit__btn:hover > svg {
+  fill: yellow;
+}
+
+.delete__btn:hover > svg {
+  fill: var(--bloodRed);
 }

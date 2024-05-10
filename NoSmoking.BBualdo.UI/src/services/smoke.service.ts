@@ -28,6 +28,7 @@ export class SmokeService {
   }
 
   deleteLog(id: number): Observable<SmokeLog> {
-    return this.http.delete<SmokeLog>(this.url + `/${id}`);
+    const url = this.url + `/${id}`;
+    return this.http.delete<SmokeLog>(url);
   }
 }
