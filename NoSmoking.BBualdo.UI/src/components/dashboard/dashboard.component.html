@@ -41,7 +41,7 @@
               <div class="smoke-log">
                 <p>{{ $index + 1 }}</p>
                 <p>{{ formatDate(log.date, "dd.MM.yyyy HH:mm", "en-US") }}</p>
-                <p>{{ log.quantity }}</p>
+                <p class="quantity">{{ log.quantity }}</p>
                 <div class="action-buttons">
                   <button class="edit__btn" (click)="openEditModal(log)">
                     <svg

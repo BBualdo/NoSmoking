@@ -1,3 +1,53 @@
+/* Mobile */
+@media (max-width: 771px) {
+  .dashboard__container {
+    margin-top: 40px;
+  }
+
+  .smoke-logs__panel {
+    padding: 12px;
+  }
+
+  input {
+    width: 150px;
+  }
+
+  .smoke-logs__header {
+    grid-template-columns: 50px repeat(2, minmax(0, 1fr)) 80px;
+
+    font-size: 1rem;
+  }
+
+  .smoke-log {
+    grid-template-columns: 50px repeat(2, minmax(0, 1fr)) 80px;
+    font-size: 1rem;
+  }
+
+  .quantity {
+    text-align: center;
+  }
+}
+/* Desktop */
+@media (min-width: 772px) {
+  .smoke-logs__panel {
+    padding: 20px;
+  }
+
+  input {
+    width: 200px;
+  }
+
+  .smoke-logs__header {
+    grid-template-columns: repeat(3, minmax(0, 1fr)) 80px;
+    font-size: 1.25rem;
+  }
+
+  .smoke-log {
+    grid-template-columns: repeat(3, minmax(0, 1fr)) 80px;
+    font-size: 1.25rem;
+  }
+}
+
 .dashboard__container {
   height: 100%;
 }
@@ -14,9 +64,7 @@
 .smoke-logs__panel {
   background-color: var(--bloodRedHover);
   display: flex;
-  height: 86px;
   justify-content: space-between;
-  padding: 20px;
 }
 
 input {
@@ -30,7 +78,6 @@ input {
   outline: none;
   padding: 12px;
   text-align: center;
-  width: 200px;
 }
 
 input:hover {
@@ -50,8 +97,6 @@ input::placeholder {
 
 .smoke-logs__header {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr)) 80px;
-  font-size: 1.25rem;
   font-weight: bold;
   border-bottom: 2px solid var(--bloodRed);
   padding-bottom: 20px;
@@ -59,8 +104,6 @@ input::placeholder {
 
 .smoke-log {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr)) 80px;
-  font-size: 1.25rem;
   font-weight: bold;
 }
 

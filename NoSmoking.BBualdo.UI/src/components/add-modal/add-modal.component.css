@@ -1,3 +1,39 @@
+/* Mobile */
+@media (max-width: 771px) {
+  .modal {
+    width: 100%;
+    padding: 20px;
+  }
+
+  label {
+    font-size: 1rem;
+  }
+
+  input {
+    font-size: 1rem;
+  }
+
+  .input__container {
+    flex-direction: column;
+    width: 100%;
+  }
+}
+/* Desktop */
+@media (min-width: 772px) {
+  .modal {
+    width: 75%;
+    padding: 40px;
+  }
+
+  label {
+    font-size: 1.25rem;
+  }
+
+  input {
+    font-size: 1.25rem;
+  }
+}
+
 .backdrop {
   align-items: center;
   background-color: rgba(0, 0, 0, 0.5);
@@ -14,14 +50,12 @@
 .modal {
   background-color: black;
   border: 4px solid var(--bloodRed);
-  width: 75%;
-  padding: 40px;
 }
 
 .modal__header {
   align-items: center;
   display: flex;
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   font-weight: bold;
   justify-content: space-between;
 }
@@ -48,18 +82,13 @@ form {
   margin-top: 40px;
 }
 
-label {
-  font-size: 1.25rem;
-}
-
 input {
   background-color: black;
   border: none;
   border-bottom: 4px solid var(--bloodRed);
   color: white;
-  font-size: 1.25rem;
-  padding: 10px;
   outline: none;
+  padding: 10px;
 }
 
 .input__container {
