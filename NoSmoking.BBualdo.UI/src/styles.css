@@ -1,1 +1,45 @@
-/* You can add global styles to this file, and also import other style files */
+* {
+  box-sizing: border-box;
+  color: white;
+  font-family: "Montserrat", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --lightPink: rgb(255, 198, 198);
+  --bloodRed: rgb(179, 0, 0);
+  --bloodRedHover: rgba(179, 0, 0, 0.445);
+}
+
+body {
+  background-color: black;
+  height: 100vh;
+}
+
+main {
+  height: 100%;
+}
+
+.primary__btn {
+  align-items: center;
+  border-radius: 50px;
+  box-shadow: 0 4px 0 var(--bloodRed);
+  cursor: pointer;
+  display: flex;
+  font-size: 1.25rem;
+  font-weight: bold;
+  height: 60px;
+  padding: 0 24px;
+  position: relative;
+  text-transform: uppercase;
+}
+
+.primary__btn:hover {
+  background-color: var(--bloodRedHover);
+}
+
+.primary__btn:active {
+  box-shadow: none;
+  top: 4px;
+}
