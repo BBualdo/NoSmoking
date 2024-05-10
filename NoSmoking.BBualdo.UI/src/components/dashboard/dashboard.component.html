@@ -7,12 +7,14 @@
     <div class="smoke-logs__box">
       <div class="smoke-logs__panel">
         <input
+          #searchBox
           type="text"
           placeholder="Search Date"
           onfocus="
           this.type='date'; 
           this.showPicker();"
           onblur="this.type='text'"
+          (input)="search(searchBox.value)"
         />
         <button class="secondary__btn" (click)="openModal()">Add Log +</button>
       </div>

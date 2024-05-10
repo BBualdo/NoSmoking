@@ -27,9 +27,7 @@ export class AddModalComponent {
 
   maxDate = formatDate(new Date(), 'yyyy-MM-ddTHH:mm', 'en-US');
 
-  constructor(private smokeService: SmokeService) {
-    console.log(this.maxDate);
-  }
+  constructor(private smokeService: SmokeService) {}
 
   addForm() {
     if (
