@@ -11,7 +11,7 @@ builder.Services.AddDbContext<SmokeLogsContext>(options =>
 {
   options.UseNpgsql(builder.Configuration.GetConnectionString("Default"));
 });
-builder.Services.AddSingleton<ISmokeLogsRepository, SmokeLogsRepository>();
+builder.Services.AddScoped<ISmokeLogsRepository, SmokeLogsRepository>();
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
