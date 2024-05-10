@@ -1,4 +1,12 @@
-<app-add-modal [isOpen]="isOpen" (closeEvent)="closeModal()"></app-add-modal>
+<app-add-modal
+  [isOpen]="isAddOpen"
+  (closeEvent)="closeAddModal()"
+></app-add-modal>
+<app-edit-modal
+  [isOpen]="isEditOpen"
+  [logToUpdate]="logToUpdate"
+  (closeEvent)="closeEditModal()"
+></app-edit-modal>
 
 <div class="dashboard__container">
   <a class="back__btn" routerLink="..">&lt; Back</a>
@@ -16,7 +24,9 @@
           onblur="this.type='text'"
           (input)="search(searchBox.value)"
         />
-        <button class="secondary__btn" (click)="openModal()">Add Log +</button>
+        <button class="secondary__btn" (click)="openAddModal()">
+          Add Log +
+        </button>
       </div>
 
       <div class="smoke-logs">
@@ -33,7 +43,7 @@
                 <p>{{ formatDate(log.date, "dd.MM.yyyy HH:mm", "en-US") }}</p>
                 <p>{{ log.quantity }}</p>
                 <div class="action-buttons">
-                  <button class="edit__btn">
+                  <button class="edit__btn" (click)="openEditModal(log)">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       height="24px"

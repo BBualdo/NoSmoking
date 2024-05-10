@@ -1,24 +1,27 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { SmokeService } from '../../services/smoke.service';
 import { SmokeLog } from '../../models/SmokeLog';
-import { BehaviorSubject, Observable, Subject, map } from 'rxjs';
+import { BehaviorSubject, Subject, map } from 'rxjs';
 import { AsyncPipe, formatDate } from '@angular/common';
 import { AddModalComponent } from '../add-modal/add-modal.component';
+import { EditModalComponent } from '../edit-modal/edit-modal.component';
 
 @Component({
   selector: 'app-dashboard',
   standalone: true,
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.css',
-  imports: [RouterLink, AsyncPipe, AddModalComponent],
+  imports: [RouterLink, AsyncPipe, AddModalComponent, EditModalComponent],
 })
 export class DashboardComponent implements OnInit {
   logsSubject: Subject<SmokeLog[] | null> = new BehaviorSubject<
     SmokeLog[] | null
   >(null);
   logs$ = this.logsSubject.asObservable();
-  isOpen = false;
+  isAddOpen = false;
+  isEditOpen = false;
+  logToUpdate: SmokeLog | null = null;
 
   constructor(private smokeService: SmokeService) {}
 
@@ -32,12 +35,26 @@ export class DashboardComponent implements OnInit {
     });
   }
 
-  openModal() {
-    this.isOpen = true;
+  openAddModal() {
+    this.isAddOpen = true;
   }
 
-  closeModal() {
-    this.isOpen = false;
+  closeAddModal() {
+    this.isAddOpen = false;
+    this.getSmokeLogs();
+  }
+
+  openEditModal(log: SmokeLog) {
+    this.isEditOpen = true;
+    this.setLogToUpdate(log);
+  }
+
+  private setLogToUpdate(log: SmokeLog) {
+    this.logToUpdate = log;
+  }
+
+  closeEditModal() {
+    this.isEditOpen = false;
     this.getSmokeLogs();
   }
 
